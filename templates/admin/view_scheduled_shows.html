@@ -1,0 +1,47 @@
+{% include "header.html" %}
+                
+                
+<div class="table-responsive">
+    <table class="table no-wrap">
+        <thead>
+            <tr>
+                
+                <th class="border-top-0">Name</th>
+                <th class="border-top-0">Time & Date</th>
+                <th class="border-top-0">Format</th>
+                <th class="border-top-0">Hall</th>
+                <th class="border-top-0">Price</th>
+                <th class="border-top-0" >action</th>
+                <th class="border-top-0" >delete</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for schedules in schedule %} <!--you pass the object and then model in the db -->
+            <!--<tr>
+                <td>1</td>
+                <td class="txt-oflo">Elite admin</td>
+                <td>SALE</td>
+                <td class="txt-oflo">April 18, 2021</td>
+                <td><span class="text-success">$24</span></td>
+            </tr>-->
+            <tr>
+                <td>{{schedules.name}}</td>
+                <td class="txt-oflo">{{schedules.date}}</td>
+                <td>{{schedules.quality}}</td>
+                <td class="txt-oflo">{{schedules.hall}}</td>
+                <td>{{schedules.price}}</td>
+                <td><a href="{{(url_for('admin.personal_info'))}}"><button type="button" class="btn btn-block btn-primary btn-xs">book now</button></a></td>
+                <td><a href ="{{(url_for('admin.delete', id=schedules.id))}}"><button type="button" class="btn btn-block btn-primary btn-xs">delete</button></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- Recent Comments -->
+<!-- ============================================================== -->
+{% include "base.html" %}

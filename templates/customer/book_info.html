@@ -1,0 +1,49 @@
+{% include "customer/header.html" %}
+                
+                
+<div class="table-responsive">
+    <table class="table no-wrap">
+        <thead>
+            <tr>
+                
+                <th class="border-top-0">Name</th>
+                <th class="border-top-0">Director</th>
+                <th class="border-top-0">Time & Date</th>
+                <th class="border-top-0">Format</th>
+                <th class="border-top-0">Hall</th>
+                <th class="border-top-0">Price</th>
+                <th class="border-top-0" >action</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for schedule in schedules %} <!--you pass the object and then model in the db -->
+            <!--<tr>
+                <td>1</td>
+                <td class="txt-oflo">Elite admin</td>
+                <td>SALE</td>
+                <td class="txt-oflo">April 18, 2021</td>
+                <td><span class="text-success">$24</span></td>
+            </tr>-->
+            <tr>
+                <td>{{schedule.movies.name}}</td>
+                <td>{{schedule.movies.director}}</td>
+                <td class="txt-oflo">{{schedule.date}}</td>
+                <td>{{schedules.quality}}</td>
+                <td class="txt-oflo">{{schedule.hall}}</td>
+                <td>{{schedule.price}}</td>
+                <td><a href="{{(url_for('customer.cust_personal_info'))}}"><button type="button" class="btn btn-block btn-primary btn-xs">book now</button></a></td>
+        
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- Recent Comments -->
+<!-- ============================================================== -->
+{% include "base.html" %}

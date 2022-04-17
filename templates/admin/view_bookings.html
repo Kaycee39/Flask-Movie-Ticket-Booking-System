@@ -1,0 +1,42 @@
+{% include "header.html" %}
+                
+                
+<div class="table-responsive">
+    <table class="table no-wrap">
+        <thead>
+            <tr>
+                
+                <th class="border-top-0">Name</th>
+                <th class="border-top-0">Amount</th>
+                <th class="border-top-0">Phone number</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for Mpesapay in mpesap %} <!--you pass the object and then model in the db -->
+            <!--<tr>
+                <td>1</td>
+                <td class="txt-oflo">Elite admin</td>
+                <td>SALE</td>
+                <td class="txt-oflo">April 18, 2021</td>
+                <td><span class="text-success">$24</span></td>
+            </tr>-->
+            <tr>
+                <td>{{schedules.name}}</td>
+                <td class="txt-oflo">{{schedules.amount}}</td>
+                <td>{{schedules.phone}}</td>
+                
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- Recent Comments -->
+<!-- ============================================================== -->
+{% include "base.html" %}

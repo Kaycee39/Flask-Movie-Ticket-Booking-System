@@ -1,0 +1,93 @@
+        {% include "header.html" %}
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    {% with messages = get_flashed_messages() %}
+                                            {% if messages %}
+                                                {% for mesg in messages %}
+                                                {{ mesg }}
+                                                {% endfor %}
+                                            {% endif %}
+                                            {% endwith %}
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    
+                        <!--<form action ="search" method="get" role="search" class="app-search d-none d-md-block me-3">
+                            <input type="text" placeholder="Search..." class="form-control mt-0">
+                            <button type="submit" class="btn btn-lg btn-default">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        
+                        </form>--->
+                       <!-- <form method="POST" action="/bookings" class="app-search d-none d-md-block me-3">
+                            form.csrf_token
+                            <label class="col-md-12 p-0">search by name</label>
+                            form.name(placeholder="Search...", class="form-control mt-0")}}
+                            form.submit(class="btn btn-success ")}}
+                        </form>--->
+                    
+                    <!--<h2 class="text-center display-4">Find Customer by Id:</h2>
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+              <form action="/find_customer_deposit" method="get">
+                  <div class="input-group">
+                      <input type="number" class="form-control form-control-lg" placeholder="Type customer id" name="customer_id">
+                      <div class="input-group-append">
+                          <button type="submit" class="btn btn-lg btn-default">
+                              <i class="fa fa-search"></i>
+                          </button>
+                      </div>
+                  </div>
+              </form>
+              <br><br>
+          </div>
+        </div>-->
+        
+                    <div class="col-lg-6 col-xlg-5 col-md-12">
+                        <div class="white-box">
+                            {% for movie in movies %}
+                            <div class="user-bg"> <img width="100%" alt="user" src="{{movie.photo}}">
+                                
+                            </div>
+                            <div class="user-btm-box mt-5 d-md-flex">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    
+                                    {% for schedule in schedules %}
+                                    <h6><strong>Name:</strong>{{ movie.name }}
+                                    </h6> 
+                                    {{schedule}}
+                                    {% endfor %}
+                                    
+                                </div>
+                                
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    {% include "base.html" %} 

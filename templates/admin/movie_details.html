@@ -1,0 +1,47 @@
+                            {% include "header.html" %}
+                
+                
+                            <div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th class="border-top-0">Name</th>
+                                            <th class="border-top-0">Movie id</th>
+                                            <th class="border-top-0">cast</th>
+                                            <th class="border-top-0">Genre</th>
+                                            <th class="border-top-0">Screen time(minutes)</th>
+                                            <th class="border-top-0">action</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for movie in movies %}
+                                        <!--<tr>
+                                            <td>1</td>
+                                            <td class="txt-oflo">Elite admin</td>
+                                            <td>SALE</td>
+                                            <td class="txt-oflo">April 18, 2021</td>
+                                            <td><span class="text-success">$24</span></td>
+                                        </tr>-->
+                                        <tr>
+                                            <td>{{movie.name}}</td>
+                                            <td class="txt-oflo">{{movie.id}}</td>
+                                            <td>{{movie.cast}}</td>
+                                            <td class="txt-oflo">{{movie.genre}}</td>
+                                            <td>{{movie.time}}</td>
+                                            <td><a href ="{{(url_for('admin.delete_movies', id=movie.id))}}"><button type="button" class="btn btn-block btn-primary btn-xs">delete</button></a></td>
+                                            
+                                            
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- Recent Comments -->
+                <!-- ============================================================== -->
+                {% include "base.html" %}
